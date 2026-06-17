@@ -1,7 +1,7 @@
 -- This information tells other players more about the mod
-name = "Extended Sample Character"
-description = "A character template for Don't Starve Together."
-author = "Dragon Wolf Leo"
+name = "Catswell, el gato que se enfrento a la constante "
+description = "El mejor superviviente de la constante 10/10 (segun el)"
+author = "Iphime_Night"
 version = "1.2.5" -- This is the version of the template. Change it to your own number.
 
 -- This is the URL name of the mod's thread on the forum; the part after the ? and before the first & in the url
@@ -19,7 +19,7 @@ reign_of_giants_compatible = false
 shipwrecked_compatible = false
 
 -- Character mods are required by all clients
-all_clients_require_mod = true 
+all_clients_require_mod = true
 
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"

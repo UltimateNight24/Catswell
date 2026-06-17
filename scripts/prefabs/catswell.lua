@@ -70,7 +70,7 @@ local master_postinit = function(inst)
 	inst.components.sanity:SetMax(TUNING.catswell_SANITY)
 
 	-- Damage multiplier (optional)
-    inst.components.combat.damagemultiplier = 1
+    inst.components.combat.damagemultiplier = 3
 
 	-- Hunger rate (optional)
 	inst.components.hunger.hungerrate = 1 * TUNING.WILSON_HUNGER_RATE
