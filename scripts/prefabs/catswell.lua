@@ -11,10 +11,16 @@ TUNING.catswell_SANITY = 200
 
 -- Custom starting inventory
 TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.catswell = {
-	"flint",
-	"flint",
-	"twigs",
-	"twigs",
+	"fish",
+	"fish",
+	"fish",
+	"fishingrod",
+    "fish",
+    "fish",
+    "fish",
+    "torch",
+    "bedroll_straw",
+    "razor"
 }
 
 local start_inv = {}
