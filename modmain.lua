@@ -41,10 +41,10 @@ local require = GLOBAL.require
 local STRINGS = GLOBAL.STRINGS
 
 -- The character select screen lines
-STRINGS.CHARACTER_TITLES.catswell = "The Sample Character"
+STRINGS.CHARACTER_TITLES.catswell = "El gato curioso"
 STRINGS.CHARACTER_NAMES.catswell = "Esc"
-STRINGS.CHARACTER_DESCRIPTIONS.catswell = "*Perk 1\n*Perk 2\n*Perk 3"
-STRINGS.CHARACTER_QUOTES.catswell = "\"Quote\""
+STRINGS.CHARACTER_DESCRIPTIONS.catswell = "*si come pescado este es mas fuerte\n*le gusta dormir\n*pierde cordura si se moja"
+STRINGS.CHARACTER_QUOTES.catswell = "\"MEOW! vamos a divertirnos\""
 STRINGS.CHARACTER_SURVIVABILITY.catswell = "Slim"
 
 -- Custom speech strings
@@ -67,4 +67,4 @@ local skin_modes = {
 }
 
 -- Add mod character to mod character list. Also specify a gender. Possible genders are MALE, FEMALE, ROBOT, NEUTRAL, and PLURAL.
-AddModCharacter("catswell", "FEMALE", skin_modes)
+AddModCharacter("catswell", "NEUTRAL", skin_modes)
