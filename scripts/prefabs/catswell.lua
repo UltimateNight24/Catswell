@@ -11,10 +11,16 @@ TUNING.catswell_SANITY = 200
 
 -- Custom starting inventory
 TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.catswell = {
-	"flint",
-	"flint",
-	"twigs",
-	"twigs",
+	"fish",
+	"fish",
+	"fish",
+	"fishingrod",
+    "fish",
+    "fish",
+    "fish",
+    "torch",
+    "bedroll_straw",
+    "razor"
 }
 
 local start_inv = {}
@@ -34,10 +40,42 @@ local function onbecameghost(inst)
    inst.components.locomotor:RemoveExternalSpeedMultiplier(inst, "catswell_speed_mod")
 end
 
+local function comerPescado(inst,data)
+	if data.food.name == 'Fish' then
+		inst.components.locomotor.runspeed = 20
+		inst.components.combat.damagemultiplier = 400
+		inst.components.talker:SetOffsetFn(function() return Vector3(0, -500, 0) end)
+		inst.components.talker:Say("GARRAS AFILADAS MEOW!", 3, false, false)
+		inst.components.timer:StartTimer("pescabuffo", 2)
+	end
+
+end
+
+local function tiempo(inst,data)
+	if data.name == "pescabuffo" then
+		inst.components.locomotor.runspeed = 6
+		inst.components.talker:SetOffsetFn(function() return Vector3(0, -500, 0) end)
+		inst.components.talker:Say('meowh, ahi va mi fuerza..', 3, false, false)
+		inst.components.combat.damagemultiplier = 1
+    end
+end
+
+local function mojado(inst,data)
+	if data.new > 0 then -- Using 'self' instead of 'inst' to not confuse with the player 'inst'
+		inst.components.sanity.dapperness = -1 * data.new
+	else
+		inst.components.sanity.dapperness = 0.1
+	end
+end
+
 -- When loading or spawning the character
 local function onload(inst)
     inst:ListenForEvent("ms_respawnedfromghost", onbecamehuman)
     inst:ListenForEvent("ms_becameghost", onbecameghost)
+
+	inst:ListenForEvent("oneat",comerPescado)
+	inst:ListenForEvent("timerdone",tiempo)
+	inst:ListenForEvent('moisturedelta',mojado)
 
     if inst:HasTag("playerghost") then
         onbecameghost(inst)
@@ -55,6 +93,8 @@ end
 
 -- This initializes for the server only. Components are added here.
 local master_postinit = function(inst)
+	inst:AddComponent("timer")
+	inst:AddComponent("sleepingbaguser")
 	-- Set starting inventory
     inst.starting_inventory = start_inv[TheNet:GetServerGameMode()] or start_inv.default
 
@@ -69,11 +109,12 @@ local master_postinit = function(inst)
 	inst.components.hunger:SetMax(TUNING.catswell_HUNGER)
 	inst.components.sanity:SetMax(TUNING.catswell_SANITY)
 
-	-- Damage multiplier (optional)
-    inst.components.combat.damagemultiplier = 3
-
 	-- Hunger rate (optional)
 	inst.components.hunger.hungerrate = 1 * TUNING.WILSON_HUNGER_RATE
+
+	--camita
+	inst.components.sleepingbaguser:SetSanityBonusMult(30)
+	inst.components.sleepingbaguser:SetHealthBonusMult(30)
 
 	inst.OnLoad = onload
     inst.OnNewSpawn = onload
