@@ -41,7 +41,8 @@ local function onbecameghost(inst)
 end
 
 local function comerPescado(inst,data)
-	if data.food.name == 'Fish' then
+
+	if data.food:HasTag('pondfish') then
 		inst.components.locomotor.runspeed = 20
 		inst.components.combat.damagemultiplier = 400
 		inst.components.talker:SetOffsetFn(function() return Vector3(0, -500, 0) end)
