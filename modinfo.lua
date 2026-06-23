@@ -1,7 +1,7 @@
 -- This information tells other players more about the mod
 name = "Catswell, el gato que se enfrento a la constante "
 description = "El mejor superviviente de la constante 10/10 (segun el), este gato no necesita chistes por que se leyo toda la divina comedia"
-author = "Only_Cats"
+author = "Only_Cats and Iphime"
 version = "1.0.0" -- This is the version of the template. Change it to your own number.
 
 -- This is the URL name of the mod's thread on the forum; the part after the ? and before the first & in the url

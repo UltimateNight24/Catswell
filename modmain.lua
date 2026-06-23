@@ -42,8 +42,8 @@ local STRINGS = GLOBAL.STRINGS
 
 -- The character select screen lines
 STRINGS.CHARACTER_TITLES.catswell = "El gato curioso"
-STRINGS.CHARACTER_NAMES.catswell = "Esc"
-STRINGS.CHARACTER_DESCRIPTIONS.catswell = "*si come pescado este es mas fuerte\n*le gusta dormir\n*pierde cordura si se moja"
+STRINGS.CHARACTER_NAMES.catswell = "El gato"
+STRINGS.CHARACTER_DESCRIPTIONS.catswell = "*buff enorme al consumir tacos de pescado\n*le gusta dormir\n*pierde cordura si se moja"
 STRINGS.CHARACTER_QUOTES.catswell = "\"MEOW! vamos a divertirnos\""
 STRINGS.CHARACTER_SURVIVABILITY.catswell = "Slim"
 
@@ -51,8 +51,8 @@ STRINGS.CHARACTER_SURVIVABILITY.catswell = "Slim"
 STRINGS.CHARACTERS.catswell = require "speech_catswell"
 
 -- The character's name as appears in-game
-STRINGS.NAMES.catswell = "Esc"
-STRINGS.SKIN_NAMES.catswell_none = "Esc"
+STRINGS.NAMES.catswell = "catswell"
+STRINGS.SKIN_NAMES.catswell_none = "gato base"
 
 -- The skins shown in the cycle view window on the character select screen.
 -- A good place to see what you can put in here is in skinutils.lua, in the function GetSkinModes
